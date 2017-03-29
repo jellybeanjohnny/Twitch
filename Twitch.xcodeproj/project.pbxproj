@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C95D37D31E8C73E800B19773 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C95D37D21E8C73E800B19773 /* main.cpp */; };
+		C95D37DF1E8C748400B19773 /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C95D37DD1E8C748400B19773 /* Engine.cpp */; };
+		C95D37E21E8C754000B19773 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95D37E11E8C754000B19773 /* OpenGL.framework */; };
+		C95D37E51E8C792600B19773 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C95D37E31E8C785800B19773 /* libglfw.3.2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,10 @@
 /* Begin PBXFileReference section */
 		C95D37CF1E8C73E800B19773 /* Twitch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Twitch; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95D37D21E8C73E800B19773 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C95D37DD1E8C748400B19773 /* Engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Engine.cpp; sourceTree = "<group>"; };
+		C95D37DE1E8C748400B19773 /* Engine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Engine.hpp; sourceTree = "<group>"; };
+		C95D37E11E8C754000B19773 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		C95D37E31E8C785800B19773 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C95D37E51E8C792600B19773 /* libglfw.3.2.dylib in Frameworks */,
+				C95D37E21E8C754000B19773 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +52,7 @@
 			children = (
 				C95D37D11E8C73E800B19773 /* Twitch */,
 				C95D37D01E8C73E800B19773 /* Products */,
+				C95D37E01E8C754000B19773 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +67,28 @@
 		C95D37D11E8C73E800B19773 /* Twitch */ = {
 			isa = PBXGroup;
 			children = (
+				C95D37DC1E8C746B00B19773 /* Engine */,
 				C95D37D21E8C73E800B19773 /* main.cpp */,
 			);
 			path = Twitch;
+			sourceTree = "<group>";
+		};
+		C95D37DC1E8C746B00B19773 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				C95D37DD1E8C748400B19773 /* Engine.cpp */,
+				C95D37DE1E8C748400B19773 /* Engine.hpp */,
+			);
+			name = Engine;
+			sourceTree = "<group>";
+		};
+		C95D37E01E8C754000B19773 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C95D37E31E8C785800B19773 /* libglfw.3.2.dylib */,
+				C95D37E11E8C754000B19773 /* OpenGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C95D37D31E8C73E800B19773 /* main.cpp in Sources */,
+				C95D37DF1E8C748400B19773 /* Engine.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +247,13 @@
 		C95D37D71E8C73E800B19773 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				DEVELOPMENT_TEAM = VQXELCH5FM;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw/3.2.1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -225,7 +261,13 @@
 		C95D37D81E8C73E800B19773 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				DEVELOPMENT_TEAM = VQXELCH5FM;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw/3.2.1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
